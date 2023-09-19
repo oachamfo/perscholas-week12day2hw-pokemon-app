@@ -7,6 +7,11 @@ const myStyle = {
   backgroundColor: "#000000",
 };
 
+const backStyle = {
+  textDecoration: "none",
+  backgroundColor: "yellow",
+  color: "blue",
+};
 class Show extends React.Component {
   render() {
     const pokemon = this.props.pokemon;
@@ -20,7 +25,9 @@ class Show extends React.Component {
         <img src={pokemon.img + ".jpg"}></img>
         <br></br>
         <h1>
-          <a href="/pokemon">Back</a>
+          <a style={backStyle} href="/pokemon">
+            Back
+          </a>
         </h1>
       </div>
     );
