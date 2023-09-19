@@ -4,7 +4,7 @@ const app = express();
 const jsxEngine = require("jsx-view-engine");
 
 //models
-const pokemons = require("./models/pokemons.js");
+const pokemons = require("./models/pokemon.js");
 
 //adding view templates
 app.set("view engine", "jsx");
@@ -24,5 +24,5 @@ app.get("/pokemons/:indexOfPokemonsArray", (req, res) => {
 
 //listen on port 3000
 app.listen(3000, () => {
-  console.log("listening");
+  console.log("Welcome to the Pokemon App!");
 });
