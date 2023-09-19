@@ -12,6 +12,7 @@ const backStyle = {
   backgroundColor: "yellow",
   color: "blue",
 };
+
 class Show extends React.Component {
   render() {
     const pokemon = this.props.pokemon;
@@ -19,10 +20,15 @@ class Show extends React.Component {
       <div style={myStyle}>
         <h1>Gotta Catch 'Em All</h1>
         <h2>
-          {pokemon.name.charAt(0).toUpperCase()}
-          {pokemon.name.slice(1)}
+          {pokemon?.name.charAt(0).toUpperCase()}
+          {pokemon?.name.slice(1)}
         </h2>
-        <img src={pokemon.img + ".jpg"}></img>
+        {pokemon?.img ? (
+          <img src={pokemon?.img + ".jpg"}></img>
+        ) : (
+          <p>Sorry, no image.</p>
+        )}
+
         <br></br>
         <h1>
           <a style={backStyle} href="/pokemon">

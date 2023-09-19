@@ -7,25 +7,38 @@ const myStyle = {
   backgroundColor: "#000000",
 };
 
+const newStyle = {
+  textDecoration: "none",
+  backgroundColor: "yellow",
+  color: "blue",
+};
+
 class Index extends React.Component {
   render() {
-    const pokemons = this.props.pokemons;
+    const pokemon = this.props.pokemon;
     return (
       <div style={myStyle}>
         <h1>See All The Pokemon!</h1>
         <ul>
-          {pokemons.map((pokemon, i) => {
+          {pokemon.map((pokemon, i) => {
             return (
               <li key={i}>
                 <a href={`/pokemon/${i}`}>
-                  {pokemon.name.charAt(0).toUpperCase()}
-                  {pokemon.name.slice(1)}
+                  {pokemon?.name?.charAt(0).toUpperCase()}
+                  {pokemon?.name?.slice(1).toLowerCase()}
                 </a>
                 ;
               </li>
             );
           })}
         </ul>
+        <nav>
+          <h1>
+            <a style={newStyle} href="/pokemon/new">
+              Create a New Pokemon
+            </a>
+          </h1>
+        </nav>
       </div>
     );
   }
