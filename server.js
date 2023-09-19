@@ -17,8 +17,10 @@ app.get("/pokemon/", (req, res) => {
 });
 
 //dynamic anchor tags added in Index.jsx
-app.get("/pokemon/:indexOfPokemonsArray", (req, res) => {
-  res.send(req.params.indexOfPokemonsArray);
+app.get("/pokemon/:indexOfPokemonArray", (req, res) => {
+  res.render("Show", {
+    pokemon: pokemon[req.params.indexOfPokemonArray],
+  });
 });
 
 //listen on port 3000
