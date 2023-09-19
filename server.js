@@ -1,4 +1,4 @@
-//dependencies
+//require dependencies
 const express = require("express");
 const app = express();
 const jsxEngine = require("jsx-view-engine");
@@ -12,8 +12,11 @@ app.engine("jsx", jsxEngine());
 
 //controllers implemented as routes
 //pokemon routes
+
 app.get("/pokemon/", (req, res) => {
-  res.render("Index");
+  console.log(pokemon);
+
+  res.render("Index", { pokemons: pokemon });
 });
 
 //listen on port 3000
