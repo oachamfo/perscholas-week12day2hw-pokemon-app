@@ -12,11 +12,12 @@ app.engine("jsx", jsxEngine());
 
 //controllers implemented as routes
 //pokemon routes
-
 app.get("/pokemon/", (req, res) => {
-  console.log(pokemon);
-
   res.render("Index", { pokemons: pokemon });
+});
+
+app.get("/pokemon/:indexOfPokemonsArray", (req, res) => {
+  res.send(req.params.indexOfPokemonsArray);
 });
 
 //listen on port 3000
